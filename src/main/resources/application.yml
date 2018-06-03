@@ -1,0 +1,45 @@
+# Server Setting
+server:
+  address: 0.0.0.0
+  port: 8666
+
+
+spring:
+#MySql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jianshudb?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    initialize: true
+  thymeleaf:
+    cache: false
+    cache-period: 0
+    mode: LEGACYHTML5
+  template:
+    cache: false
+  jpa:
+      database : MYSQL
+      show-sql : true
+      hibernate:
+        ddl-auto : update
+        # possible values: validate | update | create | create-drop
+        naming-strategy : org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect : org.hibernate.dialect.MySQL5InnoDBDialect
+
+#security:
+#  basic:
+#    enabled: false
+
+#uploadedFiles:
+#  path: E:\uploadFile
+
+#log
+logging:
+  level:
+    org.springframework:
+      web: info
+#      security: DEBUG
+#      hibernate: DEBUG
